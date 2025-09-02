@@ -39,3 +39,7 @@
 
 # debug information files
 *.dwo
+
+temp-high/
+.vscode/
+build/
