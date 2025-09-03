@@ -9,7 +9,8 @@ include_directories(/usr/local/include/highs)
 # Use global HiGHS library path
 link_directories(/usr/local/lib)
 
-add_executable(my_solver graph.cpp)
+add_executable(my_solver graph-generalised.cpp)
+# add_executable(my_solver graph.cpp)
 
 # Link with highs library
 target_link_libraries(my_solver highs)
