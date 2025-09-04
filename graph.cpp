@@ -73,12 +73,17 @@ int main() {
     std::vector<double> row_ub = {5, 3, 10, 10, 10};
 
     // Sparse matrix: 5 rows
+    /**
+     * 0 1 
+     * 2 3
+     * 4 5
+     */
     std::vector<int> start = {0, 3, 6, 8, 10}; // starting index of each row in index/value
     std::vector<int> index = {
-        0, 2, 4,      // row 0: x_11 + x_21 + x_31
-        1, 3, 5,      // row 1: x_12 + x_22 + x_32
-        0, 1,         // row 2: x_11 + x_12
-        2, 3,         // row 3: x_21 + x_22
+        0, 2, 4,      // row 0: x_11 + x_21 + x_31 -- 0
+        1, 3, 5,      // row 1: x_12 + x_22 + x_32 ---3
+        0, 1,         // row 2: x_11 + x_12 ---6    
+        2, 3,         // row 3: x_21 + x_22 
         4, 5          // row 4: x_31 + x_32
     };
     std::vector<double> value(index.size(), 1.0); // all coefficients are 1.0
