@@ -10,9 +10,16 @@ void solveHeatDistribution(const std::vector<std::vector<double>>& cost,
     int num_sources = supply.size();
     int num_consumers = demand.size();
     int num_vars = num_sources * num_consumers;
-
+    double total_supply = std::accumulate(supply.begin(), supply.end(), 0.0);
+    double total_demand = std::accumulate(demand.begin(), demand.end(), 0.0);
+    if (total_demand > total_supply) {
+        std::cerr << "Error: Total demand exceeds total supply. Problem infeasible.\n";
+        return;
+    }
     // Flatten cost matrix into objective vector
     std::vector<double> obj;
+
+    // Objective function
     for (int i = 0; i < num_sources; ++i) {
         for (int j = 0; j < num_consumers; ++j) {
             obj.push_back(cost[i][j]);
@@ -28,9 +35,9 @@ void solveHeatDistribution(const std::vector<std::vector<double>>& cost,
     // Constraints:
     std::vector<double> row_lb;
     std::vector<double> row_ub;
-    std::vector<int> start;
-    std::vector<int> index;
-    std::vector<double> value;
+    std::vector<int> start;  // Tells where each row's data starts in the index[] and value[] arrays
+    std::vector<int> index; //Column indices (i.e., variable indices) of non-zero values
+    std::vector<double> value; // Coefficient values for the constraints (same order as index[])
 
     int entry_counter = 0;
 
@@ -59,13 +66,18 @@ void solveHeatDistribution(const std::vector<std::vector<double>>& cost,
         row_lb.push_back(0.0);
         row_ub.push_back(supply[i]);
     }
-
+    start.push_back(entry_counter);
     highs.addRows(row_lb.size(), row_lb.data(), row_ub.data(),
                   index.size(), start.data(), index.data(), value.data());
 
     highs.run();
 
     auto sol = highs.getSolution();
+    if (highs.getModelStatus() != HighsModelStatus::kOptimal) {
+        std::cerr << "Error: Problem not solved to optimality. Status: "
+                  << highs.modelStatusToString(highs.getModelStatus()) << "\n";
+        return;
+    }
 
     std::cout << "\nOptimal Heat Allocation Matrix (units):\n";
     for (int i = 0; i < num_sources; ++i) {
@@ -100,22 +112,42 @@ void solveHeatDistribution(const std::vector<std::vector<double>>& cost,
         }
     }
 
+    double total_cost = 0.0;
+    for (int i = 0; i < num_sources; ++i)
+    {
+        for (int j = 0; j < num_consumers; ++j)
+        {
+            int var_idx = i * num_consumers + j;
+            total_cost += sol.col_value[var_idx] * cost[i][j];
+        }
+    }
+    std::cout << "\nVerified Total Cost = " << total_cost << "\n";
+    std::cout << "Objective from HiGHS = " << highs.getInfo().objective_function_value << "\n";
+
+    std::cout << "\nStart: ";
+    for (auto s : start)
+        std::cout << s << " ";
+    std::cout << "\nindex: ";
+    for (auto i : index)
+        std::cout << i << " ";
+    std::cout << "\nvalue: ";
+    for (auto v : value)
+        std::cout << v << " ";
 }
 int main() {
-    // Example with 3 sources and 2 consumers
+    // Example with 2 sources and 3 consumers
 
     // distance source to consumer
     std::vector<std::vector<double>> cost = {
-        {8, 2},
-        {12, 2},
-        {5, 1}
+        {1, 2, 3},
+        {4, 5, 6}
     };
 
     // source heat supply 
-    std::vector<double> supply = {2, 10, 3};
+    std::vector<double> supply = {5, 8};
     
     // consumer heating demand 
-    std::vector<double> demand = {5, 3};
+    std::vector<double> demand = {3,4, 6};
 
 
     solveHeatDistribution(cost, supply, demand);
