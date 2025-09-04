@@ -108,3 +108,6 @@ highs.addRows(1, row_lb.data(), row_ub.data(), 2, start.data(), index.data(), va
 | --------- | ------------------------- | -------------------------------------------------- | ---------------------------- |
 | `addCols` | Variables (decision vars) | Number, bounds, objective coefficients, etc.       | Define $x,y$, objective cost |
 | `addRows` | Constraints (linear eqs)  | Number, bounds, matrix data describing constraints | Define $x + y \geq 1$        |
+
+
+
