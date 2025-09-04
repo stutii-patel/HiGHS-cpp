@@ -22,11 +22,17 @@ $$
 
 Subject to:
 - Supply constraints: 
-    $$ ∑ x_{ij} ≤ supply_i$$
+    $$ 
+    ∑ x_{ij} ≤ supply_i
+    $$
 - Demand constraints: 
-    $$ ∑ x_{ij} = demand_j $$
+    $$ 
+    ∑ x_{ij} = demand_j 
+    $$
 - Non-negativity: 
-    $$ x_{ij} ≥ 0 $$
+    $$ 
+    x_{ij} ≥ 0 
+    $$
 
 # Penalty
 
