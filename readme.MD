@@ -15,14 +15,18 @@ Let:
 Objective:
 
 Minimize: 
+
 $$
 ∑∑ x_{ij} * d_{ij}
 $$
 
 Subject to:
-- Supply constraints: $$ ∑ x_{ij} ≤ supply_i$$
-- Demand constraints: $$ ∑ x_{ij} = demand_j $$
-- Non-negativity: $$ x_{ij} ≥ 0 $$
+- Supply constraints: 
+    $$ ∑ x_{ij} ≤ supply_i$$
+- Demand constraints: 
+    $$ ∑ x_{ij} = demand_j $$
+- Non-negativity: 
+    $$ x_{ij} ≥ 0 $$
 
 # Penalty
 
