@@ -77,3 +77,32 @@ proximityScore_{ij} = 1.0 - (baseCost_{ij} / maxCostFromSource_i)
 $$
 
 This penalizes the use of close consumers early unless strategically efficient.
+
+
+# RUN
+
+## Installing HiGHS
+```bash
+git clone https://github.com/ERGO-Code/HiGHS.git
+cd HiGHS
+mkdir build
+cd build
+cmake ..
+cmake -DCMAKE_BUILD_TYPE=Release .. # optional for release
+
+make -j$(nproc)
+
+# Install system-wide
+sudo make install
+
+which highs #test
+```
+
+## After installing HiGHS 
+```bash
+mkdir build
+cd build
+cmake ..
+make
+./my_solver
+```
