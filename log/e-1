@@ -1,0 +1,69 @@
+
+Fraction of each consumer's demand met by each source:
+Consumer 1439 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 1101.33
+  Source 1485: 5.25 units (100%)	Obj 2120.67
+Consumer 1440 (demand = 7.5):
+  Source 1371: 0 units (0%)	Obj 1957.94
+  Source 1485: 7.5 units (100%)	Obj 386.204
+Consumer 1441 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 1306.68
+  Source 1485: 5.25 units (100%)	Obj 377.819
+Consumer 1442 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 1010.1
+  Source 1485: 5.25 units (100%)	Obj 2029.44
+Consumer 1443 (demand = 7.875):
+  Source 1371: 7.875 units (100%)	Obj 1104.58
+  Source 1485: 0 units (0%)	Obj 2624.07
+Consumer 1444 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 1099.15
+  Source 1485: 5.25 units (100%)	Obj 566.989
+Consumer 1445 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 923.565
+  Source 1485: 5.25 units (100%)	Obj 732.083
+Consumer 1446 (demand = 7.5):
+  Source 1371: 7.5 units (100%)	Obj 707.082
+  Source 1485: 0 units (0%)	Obj 2155.12
+Consumer 1447 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 647.802
+  Source 1485: 5.25 units (100%)	Obj 1667.14
+Consumer 1448 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 800.892
+  Source 1485: 5.25 units (100%)	Obj 1820.23
+Consumer 1449 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 1011.95
+  Source 1485: 5.25 units (100%)	Obj 651.154
+Consumer 1450 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 988.948
+  Source 1485: 5.25 units (100%)	Obj 2008.29
+Consumer 1451 (demand = 5.25):
+  Source 1371: 0 units (0%)	Obj 1163.33
+  Source 1485: 5.25 units (100%)	Obj 2182.67
+Consumer 1452 (demand = 6.975):
+  Source 1371: 6.975 units (100%)	Obj 1781.53
+  Source 1485: 0 units (0%)	Obj 3129.54
+Consumer 1453 (demand = 6.975):
+  Source 1371: 6.975 units (100%)	Obj 1409.23
+  Source 1485: 0 units (0%)	Obj 2757.24
+Consumer 1454 (demand = 6.975):
+  Source 1371: 6.975 units (100%)	Obj 1576.59
+  Source 1485: 0 units (0%)	Obj 2924.59
+Consumer 1455 (demand = 6.975):
+  Source 1371: 6.975 units (100%)	Obj 1761.61
+  Source 1485: 0 units (0%)	Obj 3109.62
+Consumer 1456 (demand = 6.975):
+  Source 1371: 6.725 units (96.4158%)	Obj 1388.65
+  Source 1485: 0.25 units (3.58423%)	Obj 2736.65
+Consumer 1457 (demand = 4.8):
+  Source 1371: 0 units (0%)	Obj 756.292
+  Source 1485: 4.8 units (100%)	Obj 1689.89
+Consumer 1458 (demand = 4.8):
+  Source 1371: 0 units (0%)	Obj 814.765
+  Source 1485: 4.8 units (100%)	Obj 1748.37
+Consumer 1459 (demand = 4.8):
+  Source 1371: 0 units (0%)	Obj 1177.99
+  Source 1485: 4.8 units (100%)	Obj 2111.59
+Consumer 1460 (demand = 6.975):
+  Source 1371: 0 units (0%)	Obj 1940.19
+  Source 1485: 6.975 units (100%)	Obj 3288.2
+Objective from HiGHS = 196357
